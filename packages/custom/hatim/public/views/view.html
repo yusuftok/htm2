@@ -1,0 +1,51 @@
+<section data-ng-controller="HatimController" data-ng-init="findOne()">
+    <div style="clear: right">
+        <span>{{hatim.dateCreated | date:'medium'}}</span> /
+        <span>{{hatim.organizingUser.name}}</span>
+    </div>
+    <h2 style="display:inline-block;">{{hatim.dedicatedTo}}</h2>
+
+    <div style="display:inline-block" data-ng-if="hasAuthorization(hatim)">
+        <a class="btn" href="/hatimler/{{hatim._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove(hatim);">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table" ng-table>
+            <thead>
+            <tr>
+                <th style="text-align: left">Cüz</th>
+                <th style="text-align: left">Okuyan</th>
+                <th style="text-align: left">Durum</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="cuz in hatim.cuzes">
+                <td>{{cuz.cuzId}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger active" ng-attr-style="{{(cuz.readingUser && cuz.readingUser._id==userId)?'display:inline':'display:none'}}"
+                            ng-click="toggleRead(cuz, false)">
+                        Başkası okusun
+                    </button>
+                    <button type="button" class="btn btn-primary active" ng-attr-style="{{cuz.readingUser?'display:none':'display:inline'}}"
+                            ng-click="toggleRead(cuz, true)">
+                        Ben okuyayım
+                    </button>
+                    <span ng-attr-style="{{cuz.readingUser?'display:inline':'display:none'}}">{{cuz.readingUser.name}}</span>
+                </td>
+                <td>{{cuz.completed?'Okundu':(cuz.readingUser?'Okunuyor':'Alınmadı')}}
+                    <button type="button" class="btn btn-danger active" ng-attr-style="{{(cuz.completed && cuz.readingUser && cuz.readingUser._id==userId)?'display:inline':'display:none'}}"
+                            ng-click="toggleComplete(cuz, false)">
+                        Pardon bitirmedim!
+                    </button>
+                    <button type="button" class="btn btn-success active" ng-attr-style="{{!cuz.completed && cuz.readingUser && cuz.readingUser._id==userId?'display:inline':'display:none'}}"
+                            ng-click="toggleComplete(cuz,true)">
+                        Bitirdim
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

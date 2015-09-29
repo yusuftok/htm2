@@ -11,13 +11,12 @@
     "url": "https://github.com/linnovate/mean.git"
   },
   "scripts": {
-    "build":  "gulp build",
-    "install":"gulp install",
-    "start": "node server",
-    "mocha": "node node_modules/.bin/mocha packages/**/server/tests/**/*.js -R spec -r tools/test/mocha-req.js",
-    "karma": "node node_modules/karma/bin/karma start karma.conf.js",
-    "test": "gulp test",
-    "postinstall": "node tools/scripts/postinstall.js"
+    "start":"gulp"
+//    "start": "node server",
+//    "mocha": "node node_modules/.bin/mocha packages/**/server/tests/**/*.js -R spec -r tools/test/mocha-req.js",
+//    "karma": "node node_modules/karma/bin/karma start karma.conf.js",
+//    "test": "gulp test",
+//    "postinstall": "node tools/scripts/postinstall.js"
   },
   "dependencies": {
     "assetmanager": "latest",

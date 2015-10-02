@@ -27,7 +27,7 @@ module.exports = {
     }
     */
   },
-  hostname: 'http://localhost:3000',
+  hostname: 'https://hatim2.herokuapp.com',
   app: {
     name: 'HATIM2'
   },

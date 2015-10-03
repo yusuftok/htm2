@@ -25,6 +25,7 @@
     "cookie-parser": "latest",
     "del": "latest",
     "errorhandler": "latest",
+    "es6-promise": "^3.0.2",
     "expect.js": "latest",
     "express": "latest",
     "forever": "latest",

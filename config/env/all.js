@@ -43,13 +43,13 @@ module.exports = {
   },
   public: {
     languages: [{
-      locale: 'tr',
+      locale: 'en',
       direction: 'ltr'
     }, {
       locale: 'tr',
-      direction: 'rtl'
+      direction: 'ltr'
     }],
-    currentLanguage: 'tr',
+    currentLanguage: 'en',
     cssFramework: 'bootstrap'
   },
   // The session cookie name

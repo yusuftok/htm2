@@ -2,7 +2,7 @@
 
 module.exports = {
   //db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/mean-prod',
-    db: 'mongodb://hatim2:hatim2@ds041563.mongolab.com:41563/heroku_h4zdsbzk',
+    db: 'mongodb://hatim2:hatim2@ds027744.mongolab.com:41563/heroku_h4zdsbzk',
   /**
    * Database options that will be passed directly to mongoose.connect
    * Below are some examples.

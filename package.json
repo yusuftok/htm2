@@ -6,6 +6,7 @@
   "author": "Linnovate <mean@linnovate.net>",
   "contributors": "https://github.com/linnovate/mean/graphs/contributors",
   "mean": "0.5.5",
+  "mean-admin": "linnovate/mean-admin",
   "repository": {
     "type": "git",
     "url": "https://github.com/linnovate/mean.git"

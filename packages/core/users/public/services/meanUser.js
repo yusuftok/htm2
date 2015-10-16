@@ -111,7 +111,7 @@ angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$loca
         username: user.username,
         name: user.name
       })
-        .success(this.onIdentity.bind(this))
+        .success(function(){this.onIdentity.bind(this); $scope.$apply( $location.path( '/hatimler' ) );})
         .error(this.onIdFail.bind(this));
     };
 

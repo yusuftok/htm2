@@ -242,9 +242,17 @@ module.exports = function(MeanUser) {
 
                     req.logIn(user, function(err) {
                         if (err) return next(err);
+                        var payload = user;
+                        var escaped = JSON.stringify(payload);
+                        escaped = encodeURI(escaped);
+                        var token = jwt.sign(escaped, config.secret, { expiresInMinutes: 60*5 });
+                        res.json({ token: token, redirect:'/hatimler' });
+
+/*
                         return res.send({
                             user: user
                         });
+*/
                     });
                 });
             });

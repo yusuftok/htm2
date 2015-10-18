@@ -5,10 +5,10 @@
     <div class="alert alert-danger animated fadeIn" ng-show="reg.usernameError">{{reg.usernameError}}</div>
     <div class="alert alert-danger animated fadeIn" ng-show="reg.emailError">{{reg.emailError}}</div>
     <form id="register_form" ng-submit="reg.register()">
-        <h2>Sign Up</h2>
+        <h2>Kayıt</h2>
 
         <div class="input-wrapper">
-            <input required id="name" type="text" name="name" placeholder="Full Name"
+            <input required id="name" type="text" name="name" placeholder="Ad Soyad"
                    ng-model="reg.user.name">
 
             <div class="error_message">Please enter a correct info #</div>
@@ -16,13 +16,14 @@
         </div>
 
         <div class="input-wrapper">
-            <input required id="email_block" type="email" name="email" placeholder="Email Address"
+            <input required id="email_block" type="email" name="email" placeholder="Email Adresi"
                    ng-model="reg.user.email">
 
             <div class="error_message">Please enter a correct info #</div>
             <span class="pic email"></span>
         </div>
 
+<!--
         <div class="input-wrapper">
             <input required id="username" type="text" name="username" placeholder="Username"
                    ng-model="reg.user.username">
@@ -30,6 +31,7 @@
             <div class="error_message">Please enter a correct info #</div>
             <span class="pic username"></span>
         </div>
+-->
 
         <div class="input-wrapper">
             <input required id="password_block" name="password" type="{{reg.input.type}}"
@@ -55,12 +57,14 @@
         </div>
 
         <div class="button_register">
-            <button type="submit" class="submit_button">Sign up</button>
-            <p>Already have an account?</p>
-            <a ui-sref='auth.login'>Log in</a>
+            <button type="submit" class="submit_button">Kayıt yap</button>
+            <p>Zaten kayıtlı mısın?</p>
+            <a ui-sref='auth.login'>Gir</a>
         </div>
+<!--
         <div class="woman_ninja_bottom">
             <img src="/theme/assets/img/woman_ninja.png" alt="#">
         </div>
+-->
     </form>
 </div>

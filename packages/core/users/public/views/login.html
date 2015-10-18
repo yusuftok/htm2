@@ -6,7 +6,7 @@
 
     <form id="login_form" ng-submit="login.login()">
         <div class="input-wrapper">
-            <input required id="email_block" type="email" name="email" placeholder="Email Address" ng-model="login.user.email">
+            <input required id="email_block" type="email" name="email" placeholder="Email Adresi" ng-model="login.user.email">
             <div class="error_message">Please enter a correct info #</div>
             <span class="pic email"></span>
         </div>
@@ -20,15 +20,17 @@
                 </span>
         </div>
         <div class="forgot_password">
-            <a ui-sref='forgot-password'>Forgot your password?</a>
+            <a ui-sref='forgot-password'>Şifreni unuttun mu?</a>
         </div>
         <div class="button_login">
             <button type="submit" class="submit_button">Login</button>
-            <p>Don't have an account?</p>
-            <a ui-sref='auth.register' >Sign up</a>
+            <p>Hesabın yok mu?</p>
+            <a ui-sref='auth.register' >Kayıt ol</a>
         </div>
+<!--
         <div class="woman_ninja_bottom">
             <img src="/theme/assets/img/woman_ninja.png" alt="#">
         </div>
+-->
     </form>
 </div>

@@ -244,13 +244,18 @@ module.exports = function (Hatimler) {
                 }
                 for (var j = 0; j < hatimler.length; j++) {
                     var unread = 0;
+                    var notTaken = 0;
                     var cuzes = hatimler[j].cuzes;
                     for (var i = 0; i < 30; i++) {
-                        if (!cuzes[i].completed) {
+                        if (!cuzes[i].readingUser) {
+                            notTaken++;
+                            unread++;
+                        }else if (!cuzes[i].completed) {
                             unread++;
                         }
                     }
                     hatimler[j].unread = unread;
+                    hatimler[j].notTaken = notTaken;
                 }
 
                 res.json(hatimler)

@@ -1,12 +1,10 @@
 <section data-ng-controller="HatimController" data-ng-init="find()">
-  <ul class="articles unstyled">
-    <li data-ng-repeat="hatim in hatimler">
-      <span>{{hatim.dateCreated | date:'short'}}</span> /
-      <span>{{hatim.organizingUser.name}}</span>
-      <h2>
-        <a data-ng-href="/hatimler/{{hatim._id}}">{{hatim.dedicatedTo}}</a>
-          <span ng-if="hatim.unread>0" class="badge">{{hatim.unread}}</span>
-          <span ng-if="hatim.unread==0" class="badge">Bitti</span>
+    <ul class="articles unstyled">
+        <li data-ng-repeat="hatim in hatimler">
+            <span>{{hatim.dateCreated | date:'short'}}</span> /
+            <span>{{hatim.organizingUser.name}}</span>
+
+            <h2>
           <span data-ng-if="hasAuthorization(hatim)">
             <a class="btn" href="/hatimler/{{hatim._id}}/edit">
                 <i class="glyphicon glyphicon-edit"></i>
@@ -15,8 +13,13 @@
                 <i class="glyphicon glyphicon-trash"></i>
             </a>
           </span>
-      </h2>
-    </li>
-  </ul>
-  <h1 data-ng-hide="!hatimler || hatimler.length">Kayıtlı hatim yok. <br> Neden bir hatim <a href="/hatimler/create">Başlat</a>mıyorsun?</h1>
+                <a data-ng-href="/hatimler/{{hatim._id}}">{{hatim.dedicatedTo}}</a>
+                <span ng-if="hatim.notTaken>0" class="badge">{{hatim.notTaken}} alınmadı</span>
+                <span ng-if="hatim.unread>0" class="badge">{{hatim.unread}} okunmadı</span>
+                <span ng-if="hatim.unread==0" class="badge">Bitti</span>
+            </h2>
+        </li>
+    </ul>
+    <h1 data-ng-hide="!hatimler || hatimler.length">Kayıtlı hatim yok. <br> Neden bir hatim <a href="/hatimler/create">Başlat</a>mıyorsun?
+    </h1>
 </section>
